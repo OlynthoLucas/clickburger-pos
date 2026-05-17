@@ -1,0 +1,35 @@
+﻿**********************
+Início da transcrição do Windows PowerShell
+Hora de início: 20260505002642
+Nome de Usuário: LUCAS\lucas
+Executar como Usuário: LUCAS\lucas
+Nome da Configuração: 
+Computador: LUCAS (Microsoft Windows NT 10.0.26200.0)
+Aplicativo Host: powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:\ProjetosGit\pmv-ads-2026-1-e4-infra-t1-garcom\scripts\start-clickburger.ps1
+ID do Processo: 15628
+PSVersion: 5.1.26100.8115
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.8115
+BuildVersion: 10.0.26100.8115
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+[Log desta sessÃ£o] C:\ProjetosGit\pmv-ads-2026-1-e4-infra-t1-garcom\logs\clickburger-start-20260505-002642.log
+
+AVISO: MongoDB nÃ£o estÃ¡ ouvindo em localhost:27017. Inicie o MongoDB ou configure ConnectionStrings:MongoDb; Ã­ndices e persistÃªncia podem falhar.
+
+API (HTTP): http://localhost:8082
+Swagger (Development): http://localhost:8082/swagger
+Frontend: confira a URL do Vite na janela aberta (ex.: http://localhost:5173).
+Para encerrar, feche a janela da API ou a do Vite.
+
+Erros da API aparecem na janela PowerShell do 'dotnet run'.
+Erros do Vite aparecem na janela PowerShell do 'npm run dev'.
+Esta sessÃ£o (incl. npm install) foi salva em: C:\ProjetosGit\pmv-ads-2026-1-e4-infra-t1-garcom\logs\clickburger-start-20260505-002642.log
+
+**********************
+Fim da transcrição do Windows PowerShell
+Hora de término: 20260505002706
+**********************

@@ -1,0 +1,324 @@
+@use "sass:color";
+
+$primary: #c7e24a;
+$primary-dark: #aecb30;
+$bg-body: #f4f5f8;
+$white: #ffffff;
+$text-main: #1f2937;
+$text-muted: #6b7280;
+$border: #e5e7eb;
+$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+$radius: 1rem;
+$radius-sm: 0.75rem;
+
+// ─── LOADING ──────────────────────────────────────────────────────────────────
+
+.loadingContainer {
+    min-height: 100vh;
+    background-color: $bg-body;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.loadingCard {
+    background-color: $white;
+    padding: 2.5rem;
+    border-radius: $radius;
+    box-shadow: $shadow-md;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+
+    p {
+        color: $text-muted;
+        font-size: 0.95rem;
+    }
+}
+
+.loadingSpinner {
+    width: 2rem;
+    height: 2rem;
+    border: 3px solid $border;
+    border-top-color: $primary-dark;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.backBtnAlt {
+    background-color: $primary;
+    border: none;
+    border-radius: 9999px;
+    padding: 0.5rem 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s;
+
+    &:hover {
+        background-color: $primary-dark;
+    }
+}
+
+// ─── LAYOUT ───────────────────────────────────────────────────────────────────
+
+.container {
+    min-height: 100vh;
+    background-color: $bg-body;
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: center; // ← centraliza horizontalmente
+}
+
+.contentWrapper {
+    width: 100%;
+    max-width: 52rem; // ← largura máxima consistente
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+// ─── HEADER CARD ──────────────────────────────────────────────────────────────
+
+.headerCard {
+    background-color: $white;
+    padding: 1.25rem 1.5rem;
+    border-radius: $radius;
+    box-shadow: $shadow-sm;
+    border: 1px solid $border;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap; // ← quebra linha em telas pequenas
+}
+
+.userGroup {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+}
+
+.backBtn {
+    background-color: $bg-body;
+    border: 1px solid $border;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $text-main;
+    transition: background-color 0.15s;
+    flex-shrink: 0;
+
+    &:hover {
+        background-color: color.adjust($bg-body, $lightness: -4%);
+    }
+}
+
+.avatar {
+    width: 3.25rem;
+    height: 3.25rem;
+    background: linear-gradient(135deg, $primary, $primary-dark);
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1a1a1a;
+    font-size: 1.125rem;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+
+    @media (max-width: 480px) {
+        width: 2.75rem;
+        height: 2.75rem;
+        font-size: 1rem;
+    }
+}
+
+.userInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    min-width: 0;
+
+    h1 {
+        font-size: 1.125rem;
+        font-weight: 700;
+        color: $text-main;
+        margin: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        @media (max-width: 480px) {
+            font-size: 1rem;
+        }
+    }
+}
+
+.roleBadge {
+    display: inline-block;
+    background-color: $primary;
+    color: #1a1a1a;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.15rem 0.625rem;
+    border-radius: 9999px;
+    width: fit-content;
+}
+
+.logoutBtn {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    background-color: #fee2e2;
+    color: #dc2626;
+    border: none;
+    border-radius: 9999px;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s;
+    white-space: nowrap;
+    flex-shrink: 0;
+
+    &:hover {
+        background-color: #fecaca;
+    }
+    // Em mobile esconde o texto "Sair" e mostra só o ícone
+    @media (max-width: 360px) {
+        span {
+            display: none;
+        }
+
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+    }
+}
+
+// ─── INFO GRID ────────────────────────────────────────────────────────────────
+
+.infoGrid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr; // mobile: 1 coluna
+
+    @media (min-width: 480px) {
+        grid-template-columns: repeat(2, 1fr); // tablet: 2 colunas
+    }
+
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(3, 1fr); // desktop: 3 colunas
+    }
+}
+
+.infoCard {
+    background-color: $white;
+    padding: 1.25rem;
+    border-radius: $radius-sm;
+    box-shadow: $shadow-sm;
+    border: 1px solid $border;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.875rem;
+    transition: box-shadow 0.2s;
+
+    &:hover {
+        box-shadow: $shadow-md;
+    }
+}
+
+.iconBox {
+    background-color: $bg-body;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    color: #374151;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    min-width: 0; // evita overflow
+}
+
+.label {
+    font-size: 0.75rem;
+    color: $text-muted;
+    font-weight: 500;
+}
+
+.value {
+    color: $text-main;
+    font-weight: 600;
+    font-size: 0.875rem;
+    word-break: break-all;
+    margin: 0;
+}
+
+// ─── SETTINGS CARD ────────────────────────────────────────────────────────────
+
+.settingsCard {
+    background-color: $white;
+    padding: 1.5rem;
+    border-radius: $radius;
+    box-shadow: $shadow-sm;
+    border: 1px solid $border;
+
+    h2 {
+        font-size: 1rem;
+        font-weight: 600;
+        color: $text-main;
+        margin-bottom: 1rem;
+    }
+}
+
+.actionButtons {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.actionBtn {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    background-color: $bg-body;
+    color: $text-main;
+    border: 1px solid $border;
+    border-radius: 0.625rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.15s, border-color 0.15s;
+
+    &:hover {
+        background-color: $primary;
+        border-color: $primary-dark;
+    }
+    // Em mobile ocupa largura total
+    @media (max-width: 480px) {
+        flex: 1;
+        justify-content: center;
+    }
+}

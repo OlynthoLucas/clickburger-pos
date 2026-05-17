@@ -1,0 +1,231 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  backdrop-filter: blur(2px);
+}
+
+.modal {
+  background-color: white;
+  border-radius: 1.25rem;
+  width: 100%;
+  max-width: 420px;
+  padding: 1.75rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+// HEADER
+.header {
+  h2 {
+    font-size: 1.375rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+  }
+
+  p {
+    font-size: 0.875rem;
+    color: #6b7280;
+  }
+}
+
+// RESUMO FINANCEIRO
+.summary {
+  background-color: #f8f9fb;
+  border-radius: 0.875rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+
+  span { color: #6b7280; }
+
+  strong { font-size: 1rem; }
+}
+
+.paidValue   { color: #16a34a; }
+.remainingValue { color: #dc2626; }
+
+.progressBar {
+  height: 6px;
+  background-color: #e5e7eb;
+  border-radius: 9999px;
+  overflow: hidden;
+  margin-top: 0.25rem;
+}
+
+.progressFill {
+  height: 100%;
+  background-color: #c7e24a;
+  border-radius: 9999px;
+  transition: width 0.4s ease;
+}
+
+// SELETOR DE MODO
+.modeSelector {
+  display: flex;
+  gap: 0.5rem;
+  background-color: #f3f4f6;
+  border-radius: 0.75rem;
+  padding: 0.25rem;
+}
+
+.modeBtn {
+  flex: 1;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.6rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  background: transparent;
+  color: #6b7280;
+  transition: all 0.15s;
+
+  &:hover { background-color: #e5e7eb; }
+}
+
+.modeActive {
+  background-color: white !important;
+  color: #111827;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+// CONTEÚDO DO MODO
+.modeContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.modeDescription {
+  font-size: 0.875rem;
+  color: #6b7280;
+  line-height: 1.5;
+
+  strong { color: #111827; }
+}
+
+// INPUT DE VALOR
+.inputGroup {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid #d1d5db;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transition: border-color 0.15s;
+
+  &:focus-within { border-color: #c7e24a; }
+}
+
+.currencyPrefix {
+  padding: 0.75rem 1rem;
+  background-color: #f3f4f6;
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.9rem;
+  border-right: 1.5px solid #d1d5db;
+}
+
+.valueInput {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+
+  &::placeholder { color: #d1d5db; font-weight: 400; }
+}
+
+// ATALHOS DE VALOR
+.quickValues {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.quickBtn {
+  flex: 1;
+  min-width: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  padding: 0.5rem 0.25rem;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 0.75rem;
+  background: white;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #374151;
+  transition: all 0.15s;
+
+  small {
+    font-size: 0.7rem;
+    font-weight: 400;
+    color: #6b7280;
+  }
+
+  &:hover {
+    border-color: #c7e24a;
+    background-color: #f9fde8;
+  }
+}
+
+.error {
+  font-size: 0.8rem;
+  color: #dc2626;
+  background-color: #fef2f2;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+}
+
+// AÇÕES
+.actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.btnCancel {
+  flex: 1;
+  padding: 0.75rem;
+  border-radius: 9999px;
+  border: 1.5px solid #e5e7eb;
+  background: white;
+  color: #6b7280;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s;
+
+  &:hover { background-color: #f9fafb; }
+}
+
+.btnConfirm {
+  flex: 2;
+  padding: 0.75rem;
+  border-radius: 9999px;
+  border: none;
+  background-color: #c7e24a;
+  color: #1a1a1a;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.15s;
+
+  &:hover { opacity: 0.85; }
+}

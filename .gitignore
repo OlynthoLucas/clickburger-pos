@@ -1,0 +1,12 @@
+*.code-workspace
+node_modules/
+.vs
+.vscode
+[Bb]in/
+[Oo]bj/
+*.user
+*.suo
+.idea/
+.env
+.env.local
+.env.*.local

@@ -1,0 +1,43 @@
+@use './variables.scss' as *;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: var(--font-family-sans);
+    background-color: var(--color-background-light);
+    color: var(--color-text-main);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    height: 100%; // ← era min-height, precisa ser height
+    display: flex;
+    flex-direction: column;
+}
+
+#root {
+    display: flex;
+    flex: 1;
+    flex-direction: column; // ← adicionado para filhos ocuparem altura
+    width: 100%;
+    height: 100%; // ← era min-height, precisa ser height
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+}
+
+input, textarea {
+    font-family: inherit;
+}

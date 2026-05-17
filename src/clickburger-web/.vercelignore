@@ -1,0 +1,48 @@
+# Git and version control
+.git
+.gitignore
+.gitattributes
+
+# Logs
+logs/
+*.log
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.user
+*.suo
+
+# Project files from root (backend projects)
+../ClickBurger/
+../ClickBurgerAPIs/
+src/ClickBurger/
+src/ClickBurgerAPIs/
+
+# Documentation and presentations
+../docs/
+../videos/
+../presentation/
+docs/
+
+# Lock files (using package-lock.json)
+pnpm-lock.yaml
+
+# Backend configuration
+*.csproj
+bin/
+obj/
+
+# Environment files (local only)
+.env.local
+.env.development
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+
+# OS files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,38 @@
+{
+  "expo": {
+    "name": "ClickBurger",
+    "slug": "clickburger-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#D43621"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.clickburger.mobile"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#D43621"
+      },
+      "package": "com.clickburger.mobile"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font"
+    ],
+    "scheme": "clickburger",
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
